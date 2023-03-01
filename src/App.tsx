@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Pessoa } from './components/Pessoa'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+  let list = [
+    {name: 'Fabiano', age:43},
+    {name: 'Viviane', age:43},
+    {name: 'Marcio', age:14},
+    {name: 'Fernando', age:3},
+    {name: 'Isabela', age:1}
+  ]
+
+  return(
+    <div>
+      <h2>Lista de presença</h2>
+      <ul>
+        {list.map((item, index) => (
+          <Pessoa key={index} data={item} />
+        ))}
+      </ul>
     </div>
-  );
+  )
 }
 
 export default App;
